@@ -16,10 +16,11 @@ public class PagamentoController {
     @Autowired
     private PagamentoService pagamentoService;
 
-    @PostMapping(path = "/cadastrarPagamento")
+    @PostMapping(path = "/cadastrar")
     @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarPagamento(@RequestBody PagamentoModel pagamentoModel, @RequestBody Factory pagamentosFactory){
-        pagamentoService.PagamentoAtrasado(pagamentoModel, pagamentosFactory);
+    public PagamentoModel cadastrarPagamento(@RequestBody PagamentoModel pagamentoModel, Factory pagamentosFactory){
+        return pagamentoService.PagamentoAtrasado(pagamentoModel, pagamentosFactory);
+
     }
 
 

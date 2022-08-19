@@ -14,11 +14,11 @@ import java.math.BigDecimal;
     @AllArgsConstructor
     @NoArgsConstructor
     @Entity
-    @Table(name = "Pagamentos")
+    @Table(name = "pagamentos")
     public class PagamentoModel {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long codigo;
 
         @Column

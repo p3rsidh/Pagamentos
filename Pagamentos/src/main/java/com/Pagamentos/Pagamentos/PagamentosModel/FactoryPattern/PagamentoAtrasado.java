@@ -7,7 +7,9 @@ public class PagamentoAtrasado implements Pagamentos{
 
     @Override
     public BigDecimal calcularPagamento(BigDecimal a, BigDecimal b) {
-        return null;
+        BigDecimal resultado;
+        resultado = a.add(b);
+        return resultado;
     }
 
 }

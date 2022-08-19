@@ -6,6 +6,8 @@ import com.Pagamentos.Pagamentos.PagamentosRepository.PagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class PagamentoService {
 
@@ -13,13 +15,13 @@ public class PagamentoService {
     private PagamentoRepository pagamentoRepository;
 
     public PagamentoModel PagamentoAtrasado(PagamentoModel pagamentoModel, Factory pagamentosFactory) {
-
-        pagamentoModel.setValorTotal(pagamentosFactory.getPagamentos(pagamentoModel.getStatus()).calcularPagamento(pagamentoModel.getValorAPagar(), pagamentoModel.getDiferencaValor()));
+        BigDecimal novoTotal = pagamentosFactory.getPagamentos(pagamentoModel.getStatus()).calcularPagamento(pagamentoModel.getValorAPagar(), pagamentoModel.getDiferencaValor());
 
         pagamentoModel.getCodigo();
         pagamentoModel.getStatus();
         pagamentoModel.getValorAPagar();
         pagamentoModel.getDiferencaValor();
+        pagamentoModel.setValorTotal(novoTotal);
 
 
         return pagamentoRepository.save(pagamentoModel);
