@@ -6,8 +6,8 @@ public class Factory {
         if (status == null) {
             return null;
 
-        } else if (status.equalsIgnoreCase("PAGAMENTO_ADIANTADO")) {
-            return new PagamentoAdiantado();
+        } else if (status.equalsIgnoreCase("PAGAMENTO_EM_DIA")) {
+            return new PagamentoEmDIa();
 
         } else if (status.equalsIgnoreCase("PAGAMENTO_ATRASADO")) {
             return new PagamentoAtrasado();

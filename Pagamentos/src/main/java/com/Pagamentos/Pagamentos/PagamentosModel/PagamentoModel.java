@@ -31,7 +31,7 @@ import java.math.BigDecimal;
         private BigDecimal diferencaValor;
 
         @Column
-        private Double desconto;
+        private BigDecimal desconto;
 
         private BigDecimal valorTotal;
 

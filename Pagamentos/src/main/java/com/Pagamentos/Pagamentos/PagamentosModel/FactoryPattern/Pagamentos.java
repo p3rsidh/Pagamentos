@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface Pagamentos {
 
-        public BigDecimal calcularPagamento (BigDecimal a, BigDecimal b);
+        public BigDecimal calcularPagamento (BigDecimal a, BigDecimal b, BigDecimal desconto);
 
 
 
